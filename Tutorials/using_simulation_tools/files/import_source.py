@@ -9,7 +9,10 @@ def cd(folder):
 
 
 def import_text(text):
-    url = "https://raw.githubusercontent.com/westonMS/tempColab/main/Labs/bin/%s" % text
+    url = (
+        "https://raw.githubusercontent.com/westonMS/tempColab/master/Tutorials/using_simulation_tools/files/%s"
+        % text
+    )
     resp = requests.get(url)
     with open(text, "wb") as f:
         f.write(resp.content)
@@ -17,9 +20,8 @@ def import_text(text):
 
 def import_dataflow():
     cd("/content/tmp_code")
-    import_text("TBtemplate.txt")
     import_text("simTemplate.txt")
     import_text("simTemplate2.txt")
-    import_text("function1.sv")
-    import_text("function1.stm")
+    import_text("bitwiseAnd.sv")
+    import_text("bitwiseAnd.stm")
     cd("/content")
